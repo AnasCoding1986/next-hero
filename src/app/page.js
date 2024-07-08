@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Heading from "./Components/Heading";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       Hello next hero
-      <button>Call me</button>
+      <Heading></Heading>
     </main>
   );
 }
