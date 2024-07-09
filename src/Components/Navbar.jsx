@@ -1,17 +1,46 @@
-import React from 'react'
+"use client"; // Add this line to make the component a Client Component
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React from 'react';
 
 export default function Navbar() {
+    const pathName = usePathname();
+
+    const links = [
+        {
+            title: "About",
+            path: "/about"
+        },
+        {
+            title: "Services",
+            path: "/service"
+        },
+        {
+            title: "Contact",
+            path: "/contact"
+        },
+    ];
+
     return (
         <div>
-            <nav className='flex justify-between items-center'>
-                <h6>Logo</h6>
-                <ul className='flex justify-center items-center space-x-4'>
-                    <li>about</li>
-                    <li>service</li>
-                    <li>contact</li>
-                    <li></li>
+            <nav className='flex justify-between items-center p-4 bg-gray-800 text-white'>
+                <h6 className='text-lg font-bold'>Logo</h6>
+                <ul className='flex space-x-4'>
+                    {links.map((link) => (
+                        <li key={link.path}>
+                            <Link href={link.path}>
+                                <span 
+                                    className={`${pathName === link.path ? "text-red-500" : ""} hover:text-red-300`} 
+                                    aria-current={pathName === link.path ? "page" : undefined}
+                                >
+                                    {link.title}
+                                </span>
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </div>
-    )
+    );
 }
