@@ -1,11 +1,16 @@
 "use client"; // Add this line to make the component a Client Component
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 
 export default function Navbar() {
     const pathName = usePathname();
+    const router = useRouter();
+
+    const handler = () => {
+        router.push('/login');
+    }
 
     const links = [
         {
@@ -40,6 +45,7 @@ export default function Navbar() {
                         </li>
                     ))}
                 </ul>
+                <button onClick={handler} className='bg-white text-blue-500 px-3 py-1 rounded-lg'>Login</button>
             </nav>
         </div>
     );
