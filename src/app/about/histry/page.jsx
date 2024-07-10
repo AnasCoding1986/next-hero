@@ -1,10 +1,9 @@
-import About from "@/Components/About";
-
+import React from 'react'
 
 export default function page() {
   return (
     <div>
-      <About></About>
+      <h2>This is histry under about</h2>
     </div>
   )
 }
