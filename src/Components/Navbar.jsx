@@ -28,8 +28,20 @@ export default function Navbar() {
         {
             title: "Blogs",
             path: "/blogs"
+        },
+        {
+            title: "Categories",
+            path: "/categories"
         }
     ];
+
+    if (pathName.includes('dashBoard')) 
+        return (
+    <div className='bg-orange-500 p-5'>
+        dashboard layout
+    </div>
+    )
+
 
     return (
         <div>
