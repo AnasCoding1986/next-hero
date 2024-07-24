@@ -32,7 +32,11 @@ export default function Navbar() {
         {
             title: "Categories",
             path: "/categories"
-        }
+        },
+        {
+            title: "Posts",
+            path: "/posts"
+        },
     ];
 
     if (pathName.includes('dashBoard')) 
