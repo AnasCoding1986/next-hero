@@ -1,10 +1,7 @@
+import { getPosts } from '@/Services/postapi';
 import React from 'react';
 
-const getPosts = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-  const data = await res.json();
-  return data
-}
+
 
 const PostPage = async () => {
 
@@ -15,7 +12,10 @@ const PostPage = async () => {
       Post page
       <div className='grid grid-cols-4 gap-5'>
         {
-          postsData?.map(postData => )
+          postsData?.slice(0,10).map(({id,title,body}) => (<div key={id} className='p-4 border-2'>
+            <h6>Title: {title}</h6>
+            <h6>Description: {body}</h6>
+          </div>))
         }
       </div>
     </div>
