@@ -37,6 +37,10 @@ export default function Navbar() {
             title: "Posts",
             path: "/posts"
         },
+        {
+            title: "SeaarchApi",
+            path: "/SeaarchApi"
+        }
     ];
 
     if (pathName.includes('dashBoard')) 
