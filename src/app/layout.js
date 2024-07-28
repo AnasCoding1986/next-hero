@@ -1,8 +1,12 @@
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
+const popins = Poppins({
+  weight: ['400', '700'],
+  subsets: ["latin"]
+});
 
 export const metadata = {
   title: "Anas Next Hero",
@@ -12,13 +16,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={popins.className}>
         <Navbar></Navbar>
         {children}
         <footer>
           This is footer
         </footer>
-        </body>
+      </body>
     </html>
   );
 }
