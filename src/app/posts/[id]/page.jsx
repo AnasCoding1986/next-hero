@@ -3,12 +3,13 @@ import React from 'react';
 
 export const generateMetadata = async ({params}) => {
 
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${search}`);
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
     const postDetails = await res.json()
 
     return {
-        title: `Post Details ${postDetails.id}`,
-        description: `${postDetails.body}`
+        title: `Post Details ${postDetails.title}`,
+        description: `${postDetails.body}`,
+        keywords: postDetails.body.split(" ")
       }
 }
 
