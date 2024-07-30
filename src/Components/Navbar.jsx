@@ -1,5 +1,6 @@
 "use client"; // Add this line to make the component a Client Component
 
+
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
@@ -7,6 +8,7 @@ import React from 'react';
 export default function Navbar() {
     const pathName = usePathname();
     const router = useRouter();
+
 
     const handler = () => {
         router.push('/login');
@@ -43,12 +45,12 @@ export default function Navbar() {
         }
     ];
 
-    if (pathName.includes('dashBoard')) 
+    if (pathName.includes('dashBoard'))
         return (
-    <div className='bg-orange-500 p-5'>
-        dashboard layout
-    </div>
-    )
+            <div className='bg-orange-500 p-5'>
+                dashboard layout
+            </div>
+        )
 
 
     return (
@@ -59,8 +61,8 @@ export default function Navbar() {
                     {links.map((link) => (
                         <li key={link.path}>
                             <Link href={link.path}>
-                                <span 
-                                    className={`${pathName === link.path ? "text-red-500" : ""} hover:text-red-300`} 
+                                <span
+                                    className={`${pathName === link.path ? "text-red-500" : ""} hover:text-red-300`}
                                     aria-current={pathName === link.path ? "page" : undefined}
                                 >
                                     {link.title}
