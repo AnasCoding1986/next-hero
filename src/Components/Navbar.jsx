@@ -9,11 +9,6 @@ export default function Navbar() {
     const pathName = usePathname();
     const router = useRouter();
 
-
-    const handler = () => {
-        router.push('/login');
-    }
-
     const links = [
         {
             title: "About",
@@ -71,7 +66,7 @@ export default function Navbar() {
                         </li>
                     ))}
                 </ul>
-                <button onClick={handler} className='bg-white text-blue-500 px-3 py-1 rounded-lg'>Login</button>
+                <button className='bg-white text-blue-500 px-3 py-1 rounded-lg'>Login</button>
             </nav>
         </div>
     );

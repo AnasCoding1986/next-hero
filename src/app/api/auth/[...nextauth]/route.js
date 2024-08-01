@@ -1,9 +1,10 @@
-import NextAuth from "next-auth";
+
+import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 const handler = NextAuth({
     session: {
-        strategy: "jwt"
+        strategy: "jwt",
     },
     providers: [
         CredentialsProvider({
@@ -16,10 +17,10 @@ const handler = NextAuth({
                     return null;
                 }
                 return true;
-              }
-        })
-    ]
+              },
+        }),
+    ],
 
-})
+});
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };
